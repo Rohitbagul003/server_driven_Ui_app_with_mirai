@@ -1,0 +1,112 @@
+{
+  "type": "scaffold",
+  "appBar": {
+    "type": "appBar",
+    "title": {
+      "type": "text",
+      "data": "Mirai-Shop"
+    },
+    "leading": {
+      "type": "iconButton",
+      "child": {
+        "type": "icon",
+        "iconType": "material",
+        "icon": "menu"
+      }
+    },
+    "actions": [
+      {
+        "type": "iconButton",
+        "child": {
+          "type": "icon",
+          "iconType": "cupertino",
+          "icon": "heart_solid"
+        }
+      },
+      {
+        "type": "iconButton",
+        "child": {
+          "type": "icon",
+          "iconType": "material",
+          "icon": "search"
+        }
+      },
+      {
+        "type": "iconButton",
+        "child": {
+          "type": "icon",
+          "iconType": "material",
+          "icon": "more_horiz"
+        }
+      }
+    ]
+  },
+  "body": {
+    "type": "listView",
+    "shrinkWrap": true,
+    "separator": {
+      "type": "container",
+      "height": 10
+    },
+    "children": [
+      {
+        "type": "listTile",
+        "leading": {
+          "type": "container",
+          "height": 50,
+          "width": 50,
+          "color": "#165FC7",
+          "child": {
+            "type": "image",
+            "src": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+            "height": 150
+          }
+        },
+        "title": {
+          "type": "text",
+          "data": "White Tee",
+          "style": {
+            "fontSize": 16
+          }
+        },
+        "subtitle": {
+          "type": "text",
+          "data": "$45",
+          "style": {
+            "fontSize": 14
+          }
+        }
+      },
+      {
+        "type": "listTile",
+        "leading": {
+          "type": "container",
+          "height": 50,
+          "width": 50,
+          "color": "#165FC7",
+          "child": {
+            "type": "column",
+            "mainAxisAlignment": "center",
+            "crossAxisAlignment": "center",
+            "children": [
+              {
+                "type": "text",
+                "data": "1",
+                "style": {
+                  "fontSize": 21
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "text",
+        "data": "Home",
+        "style": {
+          "fontSize": 17
+        }
+      }
+    ]
+  }
+}

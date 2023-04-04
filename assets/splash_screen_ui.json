@@ -1,0 +1,21 @@
+{
+  "type": "scaffold",
+  "backgroundColor": "#011621",
+  "body": {
+    "type": "column",
+    "mainAxisAlignment": "center",
+    "crossAxisAlignment": "center",
+    "children": [
+      {
+        "type": "container",
+        "alignment": "center",
+        "child" : {
+          "type": "image",
+          "src": "assets/mirai_banner.png",
+          "imageType": "asset",
+          "height": 150
+        }
+      }
+    ]
+  }
+}
