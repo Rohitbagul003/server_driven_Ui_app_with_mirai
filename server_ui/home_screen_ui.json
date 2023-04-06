@@ -491,7 +491,7 @@
         },
         "child":{
           "type": "floatingActionButton",
-          "backgroundColor": "#FC3F1B",
+          "backgroundColor": "#011621",
           "foregroundColor": "#ffffff",
           "buttonType": "extended",
           "icon": {
