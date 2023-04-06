@@ -509,6 +509,11 @@
 
           }
         }
+      },
+      
+      {
+        "type": "sizedBox",
+        "height": 22
       }
 
     ]
