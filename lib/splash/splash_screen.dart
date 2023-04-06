@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     WidgetsFlutterBinding.ensureInitialized().addPostFrameCallback((timeStamp) async {
       await loadJsonData();
-      await Future.delayed(const Duration(seconds: 10));
+      await Future.delayed(const Duration(seconds: 5));
       if (mounted) {
         Navigator.pushAndRemoveUntil(
             context, MaterialPageRoute(builder: (context) => const HomeScreen()), (route) => false);

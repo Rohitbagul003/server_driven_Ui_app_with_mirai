@@ -1,8 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:mirai/mirai.dart';
+import 'package:server_driven_ui_app_with_mirai/mixin/utility.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,7 +9,7 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> with Utility {
   dynamic jsonData;
   final _loader = ValueNotifier(false);
 
@@ -24,33 +22,23 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    WidgetsFlutterBinding.ensureInitialized().addPostFrameCallback((timeStamp) async {
-      await loadJsonData();
-      await Future.delayed(const Duration(seconds: 10));
-      if (mounted) {
-        Navigator.pushAndRemoveUntil(
-            context, MaterialPageRoute(builder: (context) => const HomeScreen()), (route) => false);
-      }
-    });
-  }
-
-  Future<void> loadJsonData() async {
-    final jsonString = await rootBundle.loadString('assets/home_screen_ui.json');
-    jsonData = jsonDecode(jsonString);
-    debugPrint("jsonData for home screen : $jsonData");
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Center(
-            child: Text("HAHAHAH"),
+    return ValueListenableBuilder(
+      valueListenable: _loader,
+      builder: (context, bool loading, _) {
+        if (loading) return loadingScreen();
+        return Container(
+          child: Mirai.fromNetwork(
+            MiraiRequest(
+              url: homeScreenUrl,
+              method: Method.get,
+            ),
           ),
-          Container(child: Mirai.fromJson(jsonData, context)),
-        ],
-      ),
+        );
+      },
     );
   }
 }

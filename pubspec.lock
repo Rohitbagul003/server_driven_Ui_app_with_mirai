@@ -91,6 +91,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.0"
+  http:
+    dependency: "direct main"
+    description:
+      name: http
+      sha256: "6aa2946395183537c8b880962d935877325d6a09a2867c3970c05c0fed6ac482"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.13.5"
   http_parser:
     dependency: transitive
     description:
@@ -156,7 +164,7 @@ packages:
     source: hosted
     version: "1.8.0"
   mirai:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: mirai
       sha256: c4ac7212cd1e517c84465b616ca3049cb06dbd934cca4e6efdc2302b3739d785
